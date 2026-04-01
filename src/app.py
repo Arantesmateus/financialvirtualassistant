@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import streamlit as st
 import requests
+from datetime import datetime
 
 # --------- SETTINGS ---------
 OLLAMA_URL = 'http://127.0.0.1:11434/api/generate'
@@ -68,6 +69,9 @@ def perguntar(msg):
     r = requests.post(OLLAMA_URL, json={"model": MODEL, "prompt": prompt, "stream":False})
     return r.json()['response']
 
+def hora_atual():
+  return datetime.now().strftime("%H:%M")
+
 # ----------- INTERFACE ----------
 st.set_page_config(page_title="Investa. Sua assistente de investimentos", page_icon="💰", layout='centered')
 st.title('Investa. Sua assistente de investimentos',text_alignment='center')
@@ -82,21 +86,32 @@ if 'messages' not in st.session_state:
 for msg in st.session_state['messages']:
   with st.chat_message(msg['role']):
     st.markdown(msg['content'])
+    st.caption(msg['time'])
 
 
 # ------- User input ---------
 if question := st.chat_input('Sua dúvida sobre investimentos...'):
     # Add user message to session history
-    st.session_state['messages'].append({'role':'user', 'content': question})
+    st.session_state['messages'].append({
+      'role':'user', 
+      'content': question, 
+      'time':hora_atual()
+    })
     with st.chat_message('user'):
       st.markdown(question)
+      st.caption(hora_atual())
 
     # Add assistant message to session history
     with st.spinner('...'):
       answer = perguntar(question)
-      st.session_state['messages'].append({'role':'assistant', 'content':answer})
+      st.session_state['messages'].append({
+        'role':'assistant', 
+        'content':answer, 
+        'time':hora_atual()
+      })
       with st.chat_message('assistant'):
-        st.markdown(answer)    
+        st.markdown(answer)
+        st.caption(hora_atual())
     
     
     
