@@ -20,16 +20,16 @@
 > "62% dos brasileiros não sabem o que é reserva de emergência. Muita gente quer aprender sobre finanças, mas não sabe por onde começar — e tem medo de parecer burro perguntando."
 
 ### 💡 Solução (60 seg)
-> "O Edu é um educador financeiro que ensina de forma personalizada. Ele usa seus próprios dados para dar exemplos práticos. Não recomenda investimentos — só educa. É como ter um professor particular de finanças disponível 24h."
+> "A investa é uma educadora financeira que ensina de forma personalizada. Ela usa seus próprios dados para dar exemplos práticos. Ela poode recomendar investimentos baseados no seu histórico e necessidades. É como ter uma assistente particular de finanças disponível 24h."
 
 ### 📱 Demo (60 seg)
-> [Compartilhe a tela e faça 2-3 perguntas ao Edu]
+> [Compartilhe a tela e faça 2-3 perguntas a Investa]
 > - "O que é CDI?"
 > - "Onde estou gastando mais?"
 > - "Me explica o que é Tesouro Selic"
 
 ### ✨ Diferencial (30 seg)
-> "Diferente de chatbots genéricos, o Edu usa SEUS dados como exemplo. Isso torna o aprendizado concreto. E o melhor: roda 100% local, sem custo e sem enviar seus dados pra ninguém."
+> "Diferente de chatbots genéricos, a Investa usa SEUS dados como exemplo. Isso torna o aprendizado concreto. E o melhor: roda 100% local, sem custo e sem enviar seus dados pra ninguém."
 
 ---
 
