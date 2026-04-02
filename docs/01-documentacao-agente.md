@@ -16,24 +16,24 @@
 Muitas pessoas têm dificuldade em entender conceitos básicos de finanças pessoais, como reserva de emergência, tipos de investimentos e como organizar seus gastos.
 
 ### Solução
-> Como o agente resolve esse problema de forma proativa?
+> Como a agente resolve esse problema de forma proativa?
 
-Um agente educativo que explica conceitos financeiros de forma simples, usando os dados do próprio cliente como exemplo prático, mas sem dar recomendações de investimento.
+Uma assistente que explica conceitos financeiros de forma simples, usando os dados do próprio cliente como exemplo prático, dando recomendações de investimento caso solicitado pelo cliente.
 
 ### Público-Alvo
-> Quem vai usar esse agente?
+> Quem vai usar essa agente?
 
-Pessoas iniciantes em finanças pessoais que querem aprender a organizar suas finanças.
+Pessoas iniciantes em finanças pessoais que querem aprender a organizar suas finanças, além de aprender sobre o mundo dos investimentos.
 
 ---
 
 ## Persona e Tom de Voz
 
-### Nome do Agente
-Edu (Educador Financeiro)
+### Nome da Agente
+Invista (Assistente virtual financeira)
 
 ### Personalidade
-> Como o agente se comporta? (ex: consultivo, direto, educativo)
+> Como a agente se comporta? (ex: consultivo, direto, educativo)
 
 - Educativo e paciente
 - Usa exemplos práticos
@@ -80,13 +80,11 @@ flowchart TD
 ### Estratégias Adotadas
 
 - [X] Só usa dados fornecidos no contexto
-- [X] Não recomenda investimentos específicos
 - [X] Admite quando não sabe algo
-- [X] Foca apenas em educar, não em aconselhar
+- [X] Foca em educar e em aconselhar sobre investimentos
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-- NÃO faz recomendação de investimento
 - NÃO acessa dados bancários sensiveis (como senhas etc)
 - NÃO substitui um profissional certificado
