@@ -114,6 +114,7 @@ if question := st.chat_input('Sua dúvida sobre investimentos...'):
         st.caption(hora_atual())
     
     
+  
     
     
     
@@ -175,16 +176,7 @@ if question := st.chat_input('Sua dúvida sobre investimentos...'):
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
     
     
     

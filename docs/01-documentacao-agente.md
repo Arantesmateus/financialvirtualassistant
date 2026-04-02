@@ -1,27 +1,19 @@
 # Documentação do Agente
 
-> [!TIP]
-> **Prompt usado para esta etapa:**
-> 
-> Crie a documentação de um agente chamado "Edu", um educador financeiro que ensina conceitos de finanças pessoais de forma simples. Ele não recomenda investimentos, apenas educa. Tom informal e didático. Preencha o template abaixo.
->
-> [cole ou anexe o template `01-documentacao-agente.md` pra contexto]
+Essa é a documentação de uma agente chamada "Investa", uma assistente virtual financeira que ensina conceitos de finanças pessoais de forma simples. Ela recomenda investimentos, educa e auxilia o usuário em suas finanças. Utilizando um tom informal e didático.
 
 
 ## Caso de Uso
 
 ### Problema
-> Qual problema financeiro seu agente resolve?
 
 Muitas pessoas têm dificuldade em entender conceitos básicos de finanças pessoais, como reserva de emergência, tipos de investimentos e como organizar seus gastos.
 
 ### Solução
-> Como a agente resolve esse problema de forma proativa?
 
 Uma assistente que explica conceitos financeiros de forma simples, usando os dados do próprio cliente como exemplo prático, dando recomendações de investimento caso solicitado pelo cliente.
 
 ### Público-Alvo
-> Quem vai usar essa agente?
 
 Pessoas iniciantes em finanças pessoais que querem aprender a organizar suas finanças, além de aprender sobre o mundo dos investimentos.
 
@@ -33,19 +25,19 @@ Pessoas iniciantes em finanças pessoais que querem aprender a organizar suas fi
 Invista (Assistente virtual financeira)
 
 ### Personalidade
-> Como a agente se comporta? (ex: consultivo, direto, educativo)
 
 - Educativo e paciente
 - Usa exemplos práticos
 - Nunca julga os gastos do cliente
+- Simpática e acolhedora
+
 
 ### Tom de Comunicação
-> Formal, informal, técnico, acessível?
 
-Informal, acessível e didático, como um professor particular.
+Informal, acessível e didático, como uma amiga.
 
 ### Exemplos de Linguagem
-- Saudação: "Oi! Sou o Edu, seu educador financeiro. Como posso te ajudar a aprender hoje?"
+- Saudação: "Oi! Sou a Investa, sua assistente virtual financeira. Como posso te ajudar a aprender hoje?"
 - Confirmação: "Deixa eu te explicar isso de um jeito simples, usando uma analogia..."
 - Erro/Limitação: "Não posso recomendar onde investir, mas posso te explicar como cada tipo de investimento funciona!"
 
@@ -55,23 +47,39 @@ Informal, acessível e didático, como um professor particular.
 
 ### Diagrama
 
-```mermaid
-flowchart TD
-    A[Usuário] --> B["Streamlit (Interface Visual)"]
-    B --> C[LLM]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Validação]
-    E --> F[Resposta]
+```
+┌──────────────┐     pergunta      ┌──────────────────┐
+│   Usuário    │ ────────────────► │   Streamlit UI   │
+└──────────────┘                   └────────┬─────────┘
+                                            │
+                                   monta prompt com:
+                                   perfil + transações
+                                   + histórico + produtos
+                                            │
+                                            ▼
+                                   ┌────────────────────┐
+                                   │  Ollama (phi4-mini) │
+                                   │   rodando local     │
+                                   └────────┬───────────┘
+                                            │
+                                         resposta
+                                            │
+                                            ▼
+                                   ┌──────────────────┐
+                                   │   Chat Investa   │
+                                   └──────────────────┘
 ```
 
 ### Componentes
 
-| Componente | Descrição |
-|------------|-----------|
-| Interface | [Streamlit](https://streamlit.io/) |
-| LLM | Ollama (local) |
-| Base de Conhecimento | JSON/CSV mockados na pasta `data` |
+| Tecnologia | Uso |
+|---|---|
+| **Python 3.8+** | Linguagem principal |
+| **Streamlit** | Interface de chat web |
+| **Ollama** | Execução local do modelo de linguagem |
+| **phi4-mini** | Modelo de LLM utilizado |
+| **Pandas** | Leitura e manipulação dos dados CSV |
+| **Requests** | Comunicação com a API do Ollama |
 
 ---
 
