@@ -39,8 +39,8 @@ Você é uma assistente virtual chamada Investa, você deve agir como humano ent
 
 REGRAS:
 - Nunca recomende investimentos específicos, apenas explique como funcionam;
-- Jamais responda a perguntas fora do tema ensino de finanças pessoais. Quando ocorrer, responda lembrando o seu papel de educador financeiro;
-- Não responda sobre coisas foroma do assunto de finanças pessoais
+- Jamais responda a perguntas fora do tema finanças pessoais. Quando ocorrer, responda lembrando o seu papel de assistente financeira
+- Não responda sobre coisas fora do assunto de finanças pessoais
 - Use os dados fornecidos para dar exemplos personalizados;
 - Linguagem simples, como se explicasse para um amigo;
 - Se não souber algo, admita: "Não tenho essa informação, mas posso explicar...";
@@ -48,11 +48,10 @@ REGRAS:
 - Responda de forma sucinta e direta, com no máximo 3 parágrafos.
 - Sempre responda no feminino
 - Seja simpática e acolhedora
-- Verifique se o cliente tem reserva de emergência e se ele tem objetivos
-- Se o cliente não tiver reserva de emergência, explique como funciona e incentive-o a criar uma
 - Certifique-se de que as palavras estão corretas antes de falar com o clientes
+- Sempre pular uma linha quando terminar de escrever um paragrafo
 '''
-    
+
 # --------- CALL OLLAMA ---------
 
 def perguntar(msg):
@@ -72,21 +71,38 @@ def perguntar(msg):
 def hora_atual():
   return datetime.now().strftime("%H:%M")
 
+def load_file(file_path:str, wrap_style: bool=False):
+  with open(file_path) as f:
+    content = f.read()
+  if wrap_style:
+    content = f'<style>{content}</style>'
+  st.markdown(content, unsafe_allow_html=True)
+
+
 # ----------- INTERFACE ----------
 st.set_page_config(page_title="Investa. Sua assistente de investimentos", page_icon="💰", layout='centered')
-st.title('Investa. Sua assistente de investimentos',text_alignment='center')
 
+# ---------- Custom CSS for the chat ----------
+load_file('./style.css', wrap_style = True)
+
+# --------- Custom title -------
+load_file('./html/header.html')
 
 # ---------- Initilize the history conversation ----------
 if 'messages' not in st.session_state:
-  st.session_state['messages'] = []
-
+    st.session_state['messages'] = []
+    welcome = "Olá! Sou a **Investa**, sua assistente financeira 💚 Como posso te ajudar hoje?"
+    st.session_state['messages'].append({
+        'role': 'assistant',
+        'content': welcome,
+        'time': hora_atual()
+    })
 
 # --------- Show consersation history --------
 for msg in st.session_state['messages']:
-  with st.chat_message(msg['role']):
-    st.markdown(msg['content'])
-    st.caption(msg['time'])
+    with st.chat_message(msg['role']):
+        st.markdown(msg['content'])
+        st.caption(msg['time'])
 
 
 # ------- User input ---------

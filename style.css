@@ -1,0 +1,60 @@
+/* Main message container */
+[data-testid="stChatMessage"] {
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    margin-bottom: 8px !important;
+}
+
+/* User message — subtle background */
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
+    background-color: #f0f2f6 !important;
+}
+
+/* Force user message to the right */
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
+    flex-direction: row-reverse !important;
+    text-align: right !important;
+    margin-left: auto !important;
+    width: 85% !important;
+}
+
+/* Fix content alignment inside user bubble */
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) [data-testid="stChatMessageContent"] {
+    align-items: flex-end !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Assistant message — clean, no background */
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {
+    background-color: transparent !important;
+    border-left: 3px solid #1D9E75 !important;
+    padding-left: 14px !important;
+}
+
+/* Avatar circles */
+[data-testid="stChatMessageAvatarUser"],
+[data-testid="stChatMessageAvatarAssistant"] {
+    border-radius: 50% !important;
+    width: 32px !important;
+    height: 32px !important;
+}
+
+/* Assistant avatar — green like Investa's brand */
+[data-testid="stChatMessageAvatarAssistant"] {
+    background-color: #1D9E75 !important;
+}
+
+/* Message text */
+[data-testid="stMarkdownContainer"] p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Rounded input pill */
+[data-testid="stChatInput"] textarea {
+    border-radius: 24px !important;
+    padding: 12px 20px !important;
+    font-size: 15px !important;
+}
