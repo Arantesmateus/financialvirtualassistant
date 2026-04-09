@@ -3,11 +3,11 @@
   "idade": 29,
   "profissao": "Analista de Sistemas",
   "renda_mensal": 5000.00,
-  "perfil_investidor": "conservador",
+  "perfil_investidor": "moderado",
   "objetivo_principal": "Entender e aprender sobre investimentos para complementar a renda",
   "patrimonio_total": 85000.00,
   "reserva_emergencia_atual": 10000.00,
-  "aceita_risco": false,
+  "aceita_risco": true,
   "metas": [
     {
       "meta": "Criar reserva de emergência",

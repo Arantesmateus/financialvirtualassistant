@@ -7,7 +7,11 @@
 
 /* User message — subtle background */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
-    background-color: #f0f2f6 !important;
+    background-color: var(--background-color) !important;
+    border-right: 3px solid #ff2b2b !important;
+    padding-right: 14px !important;
+    border-left: 3px solid #ff2b2b !important;
+    padding-left: 14px !important;
 }
 
 /* Force user message to the right */
@@ -30,6 +34,8 @@
     background-color: transparent !important;
     border-left: 3px solid #1D9E75 !important;
     padding-left: 14px !important;
+    border-right: 3px solid #1D9E75 !important;
+    padding-right: 14px !important;
 }
 
 /* Avatar circles */
