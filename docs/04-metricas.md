@@ -1,12 +1,5 @@
 # Avaliação e Métricas
 
-> [!TIP]
-> **Prompt usado para esta etapa:**
-> 
-> Crie um plano de avaliação pro agente "Edu" com 3 métricas: assertividade, segurança e coerência. Inclua 4 cenários de teste e um formulário simples de feedback. Preencha o template abaixo.
->
-> [cole ou anexe o template `04-metricas.md` pra contexto]
-
 
 ## Como Avaliar seu Agente
 
@@ -25,8 +18,6 @@ A avaliação pode ser feita de duas formas complementares:
 | **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
 | **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
 
-> [!TIP]
-> Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
 
 ---
 
@@ -62,20 +53,21 @@ Use com os participantes do teste:
 
 | Métrica | Pergunta | Nota (1-5) |
 |---------|----------|------------|
-| Assertividade | "As respostas responderam suas perguntas?" | ___ |
-| Segurança | "As informações pareceram confiáveis?" | ___ |
-| Coerência | "A linguagem foi clara e fácil de entender?" | ___ |
+| Assertividade | "As respostas responderam suas perguntas?" | 5 |
+| Segurança | "As informações pareceram confiáveis?" | 5 |
+| Coerência | "A linguagem foi clara e fácil de entender?" | 3 |
 
 **Comentário aberto:** O que você achou desta experiência e o que poderia melhorar?
 
----
+O único comentário negativo foi com o tema branco que dificultava a ver, nada relacionado as informações.
 
 ## Resultados
 
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
+As respostas foram acertivas como instruido.
+Ela sempre instrui bem a pessoa para a necessidade.
 
 **O que pode melhorar:**
-- [Liste aqui]
+O tamanho das respostas que está muito extensa e o usuário pode se perder nas informações.
